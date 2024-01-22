@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "467270286364",
+    "project_id": "my-url-safety-checker",
+    "storage_bucket": "my-url-safety-checker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467270286364:android:6b4dcae35902d9015b73d9",
+        "android_client_info": {
+          "package_name": "com.example.malicious_url_detector"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiW5obcybHueaIheKGN_tdmAOWao0Qa2g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
