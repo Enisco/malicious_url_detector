@@ -130,3 +130,4 @@ class _UrlCheckerPageState extends State<UrlCheckerPage> {
     );
   }
 }
+
