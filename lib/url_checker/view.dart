@@ -63,7 +63,7 @@ class _UrlCheckerPageState extends State<UrlCheckerPage> {
                         SizedBox(
                           width: size.width * 0.35,
                           child: Text(
-                            "URL Safety Checker URL Safety Checker URL Safety Checker URL Safety Checker URL Safety Checker URL Safety Checker URL Safety Checker URL Safety Checker URL Safety Checker URL Safety Checker URL Safety Checker URL Safety Checker ",
+                            "This project checks a URL to detect if the URL is dangerous or not. This helps to prevent falling into traps, getting attacked by cyber attackers, and losing of important files.",
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: size.width * 0.013,
@@ -103,10 +103,10 @@ class _UrlCheckerPageState extends State<UrlCheckerPage> {
                             hintText: "Enter the link to check here",
                           ),
                         ),
-                        const CustomButton(
+                        CustomButton(
                           width: 300,
                           height: 45,
-                          child: Text(
+                          child: const Text(
                             "Check URL",
                             style: TextStyle(
                               color: Colors.white,
@@ -116,6 +116,7 @@ class _UrlCheckerPageState extends State<UrlCheckerPage> {
                               wordSpacing: 1.5,
                             ),
                           ),
+                          onPressed: () => _controller.checkUrlSafety(),
                         ),
                         const SizedBox(height: 60),
                       ],
@@ -130,4 +131,3 @@ class _UrlCheckerPageState extends State<UrlCheckerPage> {
     );
   }
 }
-
