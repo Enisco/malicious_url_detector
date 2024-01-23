@@ -1,5 +1,7 @@
 // ignore_for_file: avoid_print
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
@@ -19,13 +21,15 @@ class HomepageController extends GetxController {
       loading = true;
       update();
       String urlEntered = urlController.text.trim();
-      // var checkResponse = await ApiServices().checkUrl(urlEntered);
+      var checkResponse = await fetchUrlAnalysis(urlEntered);
 
-      var isMaliciousResponse = fetchUrlAnalysis(urlEntered);
+      // var isMaliciousResponse = fetchUrlAnalysis(urlEntered);
 
-      if (isMaliciousResponse.toString() == 'error') {
+      if (checkResponse.toString() == 'error') {
         print("Error checking the URL");
-        Fluttertoast.showToast(msg: "Error checking the URL");
+        Fluttertoast.showToast(
+          msg: "Error checking the URL, check your network and retry",
+        );
       } else {
         print("URL checked");
 
@@ -36,15 +40,15 @@ class HomepageController extends GetxController {
         //   Fluttertoast.showToast(msg: "The URL is safe");
         // }
 
-        // var dataBody = checkResponse;
+        var dataBody = checkResponse;
 
-        // CheckResponseModel checkResponseData = checkResponseModelFromJson(
-        //   jsonEncode(
-        //     dataBody,
-        //   ),
-        // );
-        // checkData = checkResponseData;
-        // print(checkData?.toJson());
+        CheckResponseModel checkResponseData = checkResponseModelFromJson(
+          jsonEncode(
+            dataBody,
+          ),
+        );
+        checkData = checkResponseData;
+        print(checkData?.toJson());
         update();
       }
     } else {

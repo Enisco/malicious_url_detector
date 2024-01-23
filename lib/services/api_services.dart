@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-Future<void> fetchUrlAnalysis(String urlEntered) async {
+Future fetchUrlAnalysis(String urlEntered) async {
   const apiKey = 'io7tBvUWf2BNCaMLe0g2dgloT7WstMOq';
   const url = 'https://google.com';
   const apiUrl =
@@ -14,10 +14,13 @@ Future<void> fetchUrlAnalysis(String urlEntered) async {
     if (response.statusCode == 200) {
       // Parse and use the response data as needed
       print('Response: ${response.data}');
+      return response.data;
     } else {
       print('Failed to fetch data: ${response.statusCode}');
+      return "error";
     }
   } catch (e) {
     print('Error: $e');
+    return "error";
   }
 }
